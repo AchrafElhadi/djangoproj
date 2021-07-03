@@ -1,4 +1,4 @@
 # DjangoProject
-Wach a drari cava 3likom 
+Salamo3likom be3da hia lowla
 ## details
 soon
