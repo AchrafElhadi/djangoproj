@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<form>
+<select name="dropd" onchange="location = this.value;">
+  <option value="">Trie par Categorie</option>
+  {% for c in catlist %}
+  <option value="{{c.id}}">{{c.nom}}</option></a>
+  {%endfor%}
+</select>
+</form>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">img</th>
+        <th scope="col">id</th>
+        <th scope="col">nom</th>
+        <th scope="col">prix</th>
+        <th scope="col">description</th>
+        <th scope="col">nbstock</th>
+        <th scope="col">categorie</th>
+        <th scope="col">taille</th>
+        <th scope="col">action</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    
+      
+    {% for A in articlelist %}
+   
+
+    
+    <tr class="table">
+      <td class="w-25"><img src="{{A.img.url}}" class="img-fluid img-thumbnail"></td>
+      <td>{{A.id}}</td>
+      <td>{{A.nom}}</td>
+      <td>{{A.prix}}</td>
+      <td>{{A.description}}</td>
+      <td>{{A.nbstock}}</td> 
+      <td>{{A.categorie}}</td>
+      <td>{{A.taille}}</td>
+      <td><a href="updatearticle/{{A.id}}">modifier</a>
+      <a href="deletearticle/{{A.id}}">supprimer</a></td>
+      {%endfor%}
+        
+      </tr>
+    </tbody>
+  </table>
+</a>
+{%endblock%}

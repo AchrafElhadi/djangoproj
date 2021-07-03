@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<table border="10px" cellpadding="5" >
+    <tr>
+    <th>image</th>
+    <th>id</th>
+    <th>nom</th>
+    <th>prenom</th>
+    <th>adresse</th>
+    <th>email</th>
+    <th>ville</th>
+    <th>telephone</th>
+    <th>cin</th>   
+    <th>login</th>
+    <th>passeword</th>
+    <th> action </th>
+    
+    </tr>
+    {% for A in utilisateurlist %}
+    <tr>
+        <td class="w-25"><img src="{{A.img.url}}" class="img-fluid img-thumbnail"></td>
+        <td>{{A.id}}</td>
+        <td>{{A.nom}}</td>
+        <td>{{A.prenom}}</td>
+        <td>{{A.adresse}}</td>
+        <td>{{A.email}}</td>
+        <td>{{A.ville}}</td>
+        <td>{{A.telephone}}</td>
+        <td>{{A.cin}}</td>
+        <td>{{A.login}}</td>
+        <td>{{A.password}}</td>
+        <td><a href="updateutilisateur/{{A.id}}">modifie</a>
+        <a href="deleteutilisateur/{{A.id}}">supprimer</a></td>
+    </tr>
+    {% endfor %}   
+</table>
+<a href="create">
+Nouveau Utilisateur
+</a>
+{%endblock%}

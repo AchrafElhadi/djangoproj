@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Article</th>
+        <th scope="col">nb Article</th>
+        <th scope="col">Client</th>
+        <th scope="col">Etat</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      
+    {% for A in commandelist %}
+    <tr class="table">
+        <td>{{A.article}}</td>
+        <td>{{A.nbarticle}}</td>
+        <td>{{A.client}}</td>
+        <td>{{A.etat}}</td>
+        <td><a href="updateclient/{{A.id}}">modifier</a></td>
+        <td><a href="deleteclient/{{A.id}}">supprimer</a></td>
+        {%endfor%}
+        
+      </tr>
+    </tbody>
+  </table>
+<a href="create">
+ajouter client
+</a>
+{%endblock%}

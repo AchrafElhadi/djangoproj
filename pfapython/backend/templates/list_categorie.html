@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+<table border="2">
+    <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">nom</th>
+        <th scope="col">description</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      
+    {% for A in categorielist %}
+    <tr class="table">
+        <td>{{A.id}}</td>
+        <td>{{A.nom}}</td>
+        <td>{{A.description}}</td>
+        <td><a href="updatecategorie/{{A.id}}">modifier</a></td>
+        <td><a href="deletecategorie/{{A.id}}">supprimer</a></td>
+        
+        {%endfor%}
+</table>
+<a href="create">
+ajouter categorie
+</a>
+{%endblock%}

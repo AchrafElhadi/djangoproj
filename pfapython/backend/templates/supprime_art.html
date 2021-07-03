@@ -1,0 +1,8 @@
+<h1>Delete Article</h1>
+<p>Are you sure you want to delete the article : ?</p>
+<form method="POST">
+    {% csrf_token %}
+    <a href="../..">cancel</a>
+    <input type="submit" value="Yes,delete">
+    
+</form>
