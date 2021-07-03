@@ -123,6 +123,14 @@ class deletecategorie(View):
         cat.delete()
         return redirect("categorieaffichage") 
 
+class deletecommande(View):
+    def get(self,request,pk):
+        return render(request,"supprimer_commande.html",{})
+    def post(self,request,pk):
+        cat = commande.objects.get(id=pk)
+        cat.delete()
+        return redirect("/commande") 
+
 class deleteclient(View):
     def get(self,request,pk):
         return render(request,"supprime_cli.html",{})
@@ -214,10 +222,20 @@ def loginviews(request):
     else:
         messages.Info(request,'invalid')    
 
+
     
 def home_page(request):
     return redirect('article/')     
 
-
+class updatecommandeView(View):
+    def get(self,request,pk):
+        cmd=commande.objects.get(id=pk)
+        cmdform=commandeforms(instance=cmd)
+        return render(request,"update_commande.html",{"data":cmdform})
     
-
+    def post(self,request,pk):
+        cmd=commande.objects.get(id=pk)
+        comdform=commandeforms(request.POST,request.FILES,instance=cmd)
+        if comdform.is_valid():
+            comdform.save()
+        return redirect("/commande")

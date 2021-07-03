@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<a href="/article/create" class="addlien">
+  ajouter Article
+  </a>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -32,12 +35,11 @@
             <td>{{A.nbstock}}</td> 
             <td>{{A.categorie}}</td>
             <td>{{A.taille}}</td>
-            <td><a href="updatearticle/{{A.id}}">modifier</a>
-            <a href="deletearticle/{{A.id}}">supprimer</a></td>
+            <td><a href="/article/updatearticle/{{A.id}}">modifier</a>
+            <a href="/article/deletearticle/{{A.id}}">supprimer</a></td>
     {%endfor%}
         
       </tr>
     </tbody>
   </table>
-</a>
 {%endblock%}

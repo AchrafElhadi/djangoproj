@@ -20,6 +20,7 @@ urlpatterns = [
     path('article/updatearticle/<str:pk>/', views.updatearticle,name="articleupdate"),
     path('article/deletearticle/<str:pk>/',views.deletearticle.as_view(),name="articledelete"),
     path('client/updateclient/<str:pk>/', views.updateclient,name="clientupdate"),
+    path('commande/deleteclient/<str:pk>',views.deletecommande.as_view(),name="deletecommande"),
     path('fournisseur/create', views.fournisseurviews.as_view(),name="fournisseurform"),
     path('fournisseur/', views.fournisseurlistviews.as_view(),name="fournisseuraffichage"),
     path('fournisseur/updatefournisseur/<str:pk>/', views.updatefournisseur,name="fournisseurupdate"),
@@ -31,12 +32,7 @@ urlpatterns = [
     path('',views.home_page,name="home"),
     path('commande/',views.commandelistviews.as_view(),name="commandelist"),
     path('article/<str:pk>/',views.articlelistid.as_view(),name="articles"),
-    
-    
-
-
-
-
+    path('commande/updateclient/<str:pk>/',views.updatecommandeView.as_view(),name="updatecommande"),
 
 
     

@@ -2,13 +2,16 @@
 {% block content %}
 
 <form>
-<select name="dropd" class="select_style" onchange="location = this.value;">
+<select name="dropd" style="float: right;margin-right: 2%;margin-top: 0.6%;" class="select_style" onchange="location = this.value;">
   <option value="">Trie par Categorie</option>
   {% for c in catlist %}
   <option value="{{c.id}}">{{c.nom}}</option></a>
   {%endfor%}
 </select>
 </form>
+<a href="create" class="addlien">
+  ajouter Article
+  </a>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -47,5 +50,5 @@
       </tr>
     </tbody>
   </table>
-</a>
+  
 {%endblock%}
