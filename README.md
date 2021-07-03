@@ -1,4 +1,4 @@
 # DjangoProject
-thank you 
+Wach a drari cava 3likom 
 ## details
 soon
