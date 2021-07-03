@@ -1,1 +1,4 @@
-# djangoproj
+# DjangoProject
+thank you 
+## details
+soon
