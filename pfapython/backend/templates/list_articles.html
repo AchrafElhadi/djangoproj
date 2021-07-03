@@ -2,7 +2,7 @@
 {% block content %}
 
 <form>
-<select name="dropd" onchange="location = this.value;">
+<select name="dropd" class="select_style" onchange="location = this.value;">
   <option value="">Trie par Categorie</option>
   {% for c in catlist %}
   <option value="{{c.id}}">{{c.nom}}</option></a>
