@@ -33,9 +33,7 @@ urlpatterns = [
     path('commande/',views.commandelistviews.as_view(),name="commandelist"),
     path('article/<str:pk>/',views.articlelistid.as_view(),name="articles"),
     path('commande/updateclient/<str:pk>/',views.updatecommandeView.as_view(),name="updatecommande"),
-
-
-    
+    path('register/',views.registerPage,name="registration"),
 
 
 ]

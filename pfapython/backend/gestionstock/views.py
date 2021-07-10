@@ -5,7 +5,7 @@ from django.shortcuts import render,redirect
 from django.views import View 
 from .models import *
 from .forms import *
-from django.contrib.auth import authenticate,login
+from django.contrib.auth.forms import UserCreationForm
 
 
 # Create your views here.
@@ -239,3 +239,7 @@ class updatecommandeView(View):
         if comdform.is_valid():
             comdform.save()
         return redirect("/commande")
+
+def registerPage(request):
+    form=UserCreationForm()
+    return render(request,'register.html',{'form':form})
